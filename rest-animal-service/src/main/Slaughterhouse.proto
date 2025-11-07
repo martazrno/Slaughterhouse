@@ -2,6 +2,7 @@
 // gRPC uses .proto files (Protocol Buffers) to define:
 // What services exist, what methods they expose, what data structures (messages) they use
 // a blueprint
+// each server has the same proto
 
 syntax = "proto3";
 

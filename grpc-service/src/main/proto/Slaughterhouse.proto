@@ -1,0 +1,36 @@
+//This is where you define the “language” that both the client and server will speaking.
+// gRPC uses .proto files (Protocol Buffers) to define:
+// What services exist, what methods they expose, what data structures (messages) they use
+// a blueprint
+// each server has the same proto
+
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "via.pro3.slaughterhouse.generated"; //where the generated code will be
+package slaughterhouse;
+
+//define the service/ rpc methods - given an animal id, return list of products
+service SlaughterhouseService {
+  rpc GetAnimalsForProduct (ProductRequest) returns (AnimalList);
+  rpc GetProductsForAnimal (AnimalRequest) returns (ProductList);
+}
+
+//messages (like classes in java) -- will be automatically generated
+message ProductRequest {
+  string product_id = 1; //field with a unique number within the message
+}
+
+message AnimalRequest {string animal_id = 1;}
+
+message Animal {
+  string animal_id = 1;
+  string registration_number = 2;}
+
+message Product {
+  string product_id = 1;
+  string product_name = 2;}
+
+message AnimalList {repeated Animal animals = 1;}
+
+message ProductList {repeated Product products = 1;}
