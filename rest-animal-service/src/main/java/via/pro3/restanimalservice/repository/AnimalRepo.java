@@ -7,5 +7,4 @@ import java.util.List;
 
 public interface AnimalRepo extends JpaRepository<Animal, Long> {
     List<Animal> findByDate(LocalDate date);
-    List<Animal> findByOrigin(String origin);
-}
+    List<Animal> findByOrigin(String origin);}

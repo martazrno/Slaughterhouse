@@ -1,4 +1,4 @@
-//This is where you define the “language” that both the client and server will speaking.
+// middleman for server and client -- so i can use multiple languages
 // gRPC uses .proto files (Protocol Buffers) to define:
 // What services exist, what methods they expose, what data structures (messages) they use
 // a blueprint
